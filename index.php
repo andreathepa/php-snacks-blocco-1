@@ -1,5 +1,7 @@
 <?php
     
+    //SNACK 1
+
     $lba = [
         [
             'teams'  => 'Brindisi - Trieste',
@@ -50,6 +52,73 @@
         ],
         ];
 
+    // SNACK 2
+
+        $flag = null;
+        if(isset($_GET["age"]) && isset($_GET["user"]) && isset($_GET["email"])){
+
+            $user = $_GET["user"];
+
+            $email = $_GET["email"];
+
+            $age = $_GET["age"];
+
+            if(strlen($user) > 3 && str_contains($email, '@') && str_contains($email, '.') && is_numeric($age)){
+
+                $flag = true;
+
+            } else{
+
+                $flag = false;
+            } 
+    };
+
+    
+    // SNACK 3
+
+    $posts = [
+
+        '10/01/2019' => [
+            [
+                'title' => 'Post 1',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 1'
+            ],
+            [
+                'title' => 'Post 2',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 2'
+            ],
+        ],
+        '10/02/2019' => [
+            [
+                'title' => 'Post 3',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 3'
+            ]
+        ],
+        '15/05/2019' => [
+            [
+                'title' => 'Post 4',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 4'
+            ],
+            [
+                'title' => 'Post 5',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 5'
+            ],
+            [
+                'title' => 'Post 6',
+                'author' => 'Michele Papagni',
+                'text' => 'Testo post 6'
+            ]
+        ],
+    ];
+
+   
+        
+
 
        
 
@@ -91,6 +160,49 @@
                     <?php } ?>
                 </ul>
             </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Snack 2</h1>
+        <div class="row">
+            <div class="col-12">
+
+                <?php if($flag !== null){ ?>
+                    <h4><?php echo $flag === true ? "Accesso riuscito" : "Accesso negato"; ?></h4>
+                <?php } else{?>
+
+                <form action="index.php" method="GET">
+                    <input type="text" name="user">
+                    <input type="text" name="email">
+                    <input type="text" name="age">
+                    <input type="submit" value="send">
+                    
+
+                </form>
+                <?php } ?>
+                    
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Snack 3</h1>
+        <div class="row">
+            <div class="col-12">
+
+            <?php foreach($posts as $index => $post) {?>
+                <h2>Posted in: <?php echo $index ?></h2>
+            <?php foreach($post as $i => $info){?>
+                <h4><?php echo $info['author'] ?></h4>
+                <p><?php echo $info['text'] ?></p>
+                <p><?php echo $info['title'] ?></p>
+        <?php }} ?>
+                
+            </div>
+            
         </div>
     </div>
 </body>
