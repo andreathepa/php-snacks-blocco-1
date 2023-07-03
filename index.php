@@ -62,13 +62,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>snack php</title>
 </head>
 <body>
     <div class="container">
+        <h1>Snack 1</h1>
         <div class="row">
             <div class="col-12">
-                <ul>
+                <h3>Array prova 1</h3>
+
+                <ul class="list-unstyled">
                     <?php foreach($lba as $game) { ?>
                         <li>
                             <?php echo ($game['teams']." ".$game['result']); ?>
@@ -77,7 +81,9 @@
                 </ul>
             </div>
             <div class="col-12">
-                <ul>
+                <h3>Array prova 2</h3>
+
+                <ul class="list-unstyled">
                     <?php foreach($basket as $data) { ?>
                         <li>
                             <?php echo ($data['home']." - ".$data['guest'].": ".$data['result']); ?>
