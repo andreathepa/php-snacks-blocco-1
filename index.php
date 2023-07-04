@@ -162,7 +162,7 @@
             </div>
         </div>
     </div>
-
+    <hr>
     <div class="container">
         <h1>Snack 2</h1>
         <div class="row">
@@ -188,17 +188,19 @@
         </div>
     </div>
 
+    <hr>
+
     <div class="container">
         <h1>Snack 3</h1>
         <div class="row">
             <div class="col-12">
 
-            <?php foreach($posts as $index => $post) {?>
-                <h2>Posted in: <?php echo $index ?></h2>
-            <?php foreach($post as $i => $info){?>
-                <h4><?php echo $info['author'] ?></h4>
-                <p><?php echo $info['text'] ?></p>
-                <p><?php echo $info['title'] ?></p>
+            <?php foreach($posts as $key => $post) {?>
+                <h2>Posted in: <?php echo $key ?></h2>
+            <?php foreach($post as $item => $result){?>
+                <h4><?php echo $result['author'] ?></h4>
+                <h3><?php echo $result['text'] ?></p>
+                <h2><?php echo $result['title'] ?></p>
         <?php }} ?>
                 
             </div>
